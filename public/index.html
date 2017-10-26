@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bell Takeout Service System</title>
+		<meta name="description" content="">
+		<meta name="format-detection" content="telephone-no">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no">
+		<!--[if lt IE 9]>
+		<script>
+		(function(){
+		  var ef = function(){};
+		  window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+		}());
+		</script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="./bootstrap-4.0.0-beta-dist/css/bootstrap.min.css">
+		<script src="./jquery-3.2.1.js"></script>
+		<script src="./popper-1.12.5.js"></script>
+		<script src="./bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
+
+		<link href="./css/starter-template.css" rel="stylesheet">
+
+		<script src="./js/menu.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">贝尔创意科教</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">链接</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">不能点</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">下拉</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">第一项</a>
+              <a class="dropdown-item" href="#">第二项</a>
+              <a class="dropdown-item" href="#">第三项</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="关键字" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>贝尔内部外卖点餐</h1>
+        <p class="lead">只供内部使用，工作日点餐（包含加班日）<br> 请使用公司公用个人邮箱点餐 :)</p></br>
+      </div>
+
+			<div class="alert alert-primary" role="alert">
+				我的外卖
+			</div>
+
+			<form action="/post_order" method="post">
+				<div class="form-group">
+					<label for="inputEmail">公司邮箱</label>
+					<input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="inputEmailHelp" placeholder="请输入邮箱">
+					<small id="inputEmailHelp" class="form-text text-muted">请填写公司公用的完整个人邮箱</small>
+				</div>
+
+				<div id="menuContainer">
+				<div class="form-group">
+					<label>菜单<span class="badge badge-success">现炒快餐</span></label>
+					<div class="form-row align-items-center">
+				    <div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="form-group">
+					<label>菜单<span class="badge badge-info">烧腊类</span></label>
+					<div class="form-row align-items-center">
+				    <div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+						<div class="col-auto">
+				      <label class="mr-sm-2" for="inlineFormCustomSelect">麻婆豆腐饭</label>
+				      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+								<option value="0" selected>0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				      </select>
+				    </div>
+				  </div>
+				</div>
+				</div>
+
+				<div class="form-group">
+			    <label for="exampleFormControlTextarea1">备注信息</label>
+			    <textarea name="extra" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+			  </div>
+
+				<button type="submit" class="btn btn-primary">提交点餐</button>
+
+				<small id="summary" class="form-text text-muted">
+				  当前已选：无
+				</small>
+			</form></br>
+
+			<div class="alert alert-success" role="alert">
+				当日统计
+			</div>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th>#</th>
+			      <th>Email</th>
+			      <th>列表</th>
+			      <th>备注</th>
+			    </tr>
+			  </thead>
+			  <tbody id="summaryContainer">
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>Mark</td>
+			      <td>Otto</td>
+			      <td>@mdo</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>Jacob</td>
+			      <td>Thornton</td>
+			      <td>@fat</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>Larry</td>
+			      <td>the Bird</td>
+			      <td>@twitter</td>
+			    </tr>
+			  </tbody>
+			</table>
+
+			<p class="text-right" id="summaryText">Right aligned text on all viewport sizes.</p>
+    </div><!-- /.container -->
+
+		<script src="./js/my_order.js"></script>
+		<script src="./js/summary.js"></script>
+	</body>
+</html>
