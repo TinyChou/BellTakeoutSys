@@ -4,7 +4,8 @@
   "description": "Simple system made by NodeJS with expressjs for our takeout service",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node index.js"
   },
   "keywords": [
     "takeout",
