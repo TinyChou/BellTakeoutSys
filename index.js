@@ -29,7 +29,7 @@ app.post('/post_order', function (req, res) {
     res.end();
     return;
   }
-  if (!email.endsWith('@bolorobo.com')){
+  if (!email.endsWith('@bolorobo.com') && !email.endsWith('@belledu.com')){
     res.write('哪儿来的的奸细!');
     res.end();
     return;
