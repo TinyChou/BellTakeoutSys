@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 
 const Menu = require('./menu.js')
 
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+// cookie
+app.use(cookieParser())
 
 app.get('/hello', function (req, res) {
   res.send('Hello World!')
@@ -23,7 +26,7 @@ app.get('/hello', function (req, res) {
 app.post('/post_order', function (req, res) {
   res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 
-  const email = req.body.email;
+  const email = req.body.email || req.cookies.email;
   if (!emailValidator.validate(email)) {
     res.write('Email 格式错误!');
     res.end();
@@ -34,6 +37,9 @@ app.post('/post_order', function (req, res) {
     res.end();
     return;
   }
+  
+  // set email to cookie
+  res.cookie('email', email, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
 
   const menus = new Menu().getAll();
   const fastfood = menus[0];
