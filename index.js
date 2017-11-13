@@ -37,9 +37,9 @@ app.post('/post_order', function (req, res) {
     res.end();
     return;
   }
-  
+
   // set email to cookie
-  res.cookie('email', email, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
+  res.cookie('email', email, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: false });
 
   const menus = new Menu().getAll();
   const fastfood = menus[0];
