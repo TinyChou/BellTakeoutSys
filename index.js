@@ -43,7 +43,7 @@ app.post('/post_order', function (req, res) {
 
   const menus = new Menu().getAll();
   const fastfood = menus[0];
-  const curedfood = menus[1];
+  const curedfood = [];//menus[1];
 
   const orders = [];
   const extra = req.body.extra;
