@@ -20,7 +20,8 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 app.get('/hello', function (req, res) {
-  res.send('Hello World!')
+  // res.send('Hello World!')
+  res.redirect('/?message=Hello World!')
 })
 
 app.post('/post_order', function (req, res) {
@@ -28,13 +29,15 @@ app.post('/post_order', function (req, res) {
 
   const email = req.body.email || req.cookies.email;
   if (!emailValidator.validate(email)) {
-    res.write('Email 格式错误!');
-    res.end();
+    // res.write('Email 格式错误!');
+    // res.end();
+    res.redirect('/?message=1&type= alert-danger')
     return;
   }
   if (!email.endsWith('@bolorobo.com') && !email.endsWith('@belledu.com')){
-    res.write('哪儿来的的奸细!');
-    res.end();
+    // res.write('哪儿来的的奸细!');
+    // res.end();
+    res.redirect('/?message=2&type= alert-danger')
     return;
   }
 
@@ -93,16 +96,19 @@ app.post('/post_order', function (req, res) {
   console.log(email + ' ' + extra);
 
   if (orders.length === 0) {
-    res.write('点餐失败！:(\n你确定你有选菜单吗？别逗我, - -||')
-    res.end();
+    // res.write('点餐失败！:(\n你确定你有选菜单吗？别逗我, - -||')
+    // res.end();
+    res.redirect('/?message=3&type= alert-danger')
     return;
   }
 
   write(email, orders, extra, function () {
-    res.write('点餐成功！');
+    // res.write('点餐成功！');
+    res.redirect('/?message=4&type= alert-success')
     res.end();
   }, function () {
-    res.write('点餐失败！服务器错误。。。');
+    // res.write('点餐失败！服务器错误。。。');
+    res.redirect('/?message=5&type= alert-danger')
     res.end();
   });
 })
